@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         AnimatePlayer();
+        PlayerJump();
     }
 
     void PlayerMovement()
@@ -64,6 +65,29 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool(WALK_ANIMATION, false);
+        }
+    }
+
+    void PlayerJump()
+    {
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            isGrounded = false;
+            playerBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+        else if (Input.GetButtonDown("Jump") && !isGrounded && !isDoubleJumped)
+        {
+            isDoubleJumped = true;
+            playerBody.AddForce(new Vector2(0f, jumpForce * 1.3f), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(GROUND))
+        {
+            isGrounded = true;
+            isDoubleJumped = false;
         }
     }
 }
