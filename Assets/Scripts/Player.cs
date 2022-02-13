@@ -30,4 +30,21 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
+
+    void Update()
+    {
+        PlayerMovement();
+    }
+
+    void PlayerMovement()
+    {
+        movementX = Input.GetAxisRaw("Horizontal");
+
+        minPos = -8f;
+
+        if (transform.position.x > minPos && movementX < 0 || movementX > 0)
+        {
+            transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
+        }
+    }
 }
