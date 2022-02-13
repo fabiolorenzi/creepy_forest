@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D playerBody;
     private Animator anim;
     private SpriteRenderer sr;
-    private string WALK_ANIMATION = "Walk";
+    private string WALK_ANIMATION = "isWalking";
     private string GROUND = "Ground";
 
     private bool isGrounded;
@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        AnimatePlayer();
     }
 
     void PlayerMovement()
@@ -45,6 +46,24 @@ public class Player : MonoBehaviour
         if (transform.position.x > minPos && movementX < 0 || movementX > 0)
         {
             transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
+        }
+    }
+
+    void AnimatePlayer()
+    {
+        if (movementX > 0)
+        {
+            anim.SetBool(WALK_ANIMATION, true);
+            sr.flipX = false;
+        }
+        else if (movementX < 0)
+        {
+            anim.SetBool(WALK_ANIMATION, true);
+            sr.flipX = true;
+        }
+        else
+        {
+            anim.SetBool(WALK_ANIMATION, false);
         }
     }
 }
