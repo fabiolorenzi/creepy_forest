@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     private string WALK_ANIMATION = "isWalking";
+    private string JUMP_ANIMATION = "isJumping";
     private string GROUND = "Ground";
 
     private bool isGrounded;
@@ -74,11 +75,13 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
             playerBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            anim.SetBool(JUMP_ANIMATION, true);
         }
         else if (Input.GetButtonDown("Jump") && !isGrounded && !isDoubleJumped)
         {
             isDoubleJumped = true;
             playerBody.AddForce(new Vector2(0f, jumpForce * 1.3f), ForceMode2D.Impulse);
+            anim.SetBool(JUMP_ANIMATION, true);
         }
     }
 
@@ -88,6 +91,7 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
             isDoubleJumped = false;
+            anim.SetBool(JUMP_ANIMATION, false);
         }
     }
 }
