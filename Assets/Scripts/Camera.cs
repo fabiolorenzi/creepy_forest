@@ -14,6 +14,7 @@ public class Camera : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
     }
+
     void LateUpdate()
     {
         if (!player)
