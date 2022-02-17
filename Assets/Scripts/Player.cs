@@ -25,11 +25,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float minPos, maxPos;
 
+    private int score;
+
     private void Awake()
     {
         playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        score = 0;
+        Debug.Log(score);
     }
 
     void Update()
@@ -92,6 +96,12 @@ public class Player : MonoBehaviour
             isGrounded = true;
             isDoubleJumped = false;
             anim.SetBool(JUMP_ANIMATION, false);
+        }
+
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            score++;
+            Debug.Log(score);
         }
     }
 }
