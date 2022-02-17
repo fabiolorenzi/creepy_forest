@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     private int score;
 
+    private AudioSource catcher;
+
     private void Awake()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -34,6 +36,11 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         score = 0;
         Debug.Log(score);
+    }
+
+    void Start()
+    {
+        catcher = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -101,7 +108,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             score++;
-            Debug.Log(score);
+            catcher.Play();
         }
     }
 }
