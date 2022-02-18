@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     private float minPos, maxPos;
 
     private int score;
+    private Score ScoreObj;
 
     private AudioSource catcher;
 
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         score = 0;
-        Debug.Log(score);
+        ScoreObj = GameObject.FindObjectOfType<Score>();
     }
 
     void Start()
@@ -109,6 +110,7 @@ public class Player : MonoBehaviour
         {
             score++;
             catcher.Play();
+            ScoreObj.UpdateScore(score);
         }
     }
 }
