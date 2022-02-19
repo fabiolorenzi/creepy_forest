@@ -25,8 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float minPos, maxPos;
 
-    private int score;
-    private Score ScoreObj;
+    public static int score;
 
     private AudioSource catcher;
 
@@ -36,12 +35,12 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         score = 0;
-        ScoreObj = GameObject.FindObjectOfType<Score>();
     }
 
     void Start()
     {
         catcher = GetComponent<AudioSource>();
+        Score.UpdateScore(score);
     }
 
     void Update()
@@ -110,7 +109,7 @@ public class Player : MonoBehaviour
         {
             score++;
             catcher.Play();
-            ScoreObj.UpdateScore(score);
+            Score.UpdateScore(score);
         }
     }
 }

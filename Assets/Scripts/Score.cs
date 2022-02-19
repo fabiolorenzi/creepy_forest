@@ -5,10 +5,16 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private TextMeshProUGUI text;
+    public static TextMeshProUGUI scoreText;
 
-    public void UpdateScore(int score)
+
+    void Start()
     {
-        text.text = "Points: " + score;
+        scoreText = GetComponent<TextMeshProUGUI>();
+    }
+
+    public static void UpdateScore(int score)
+    {
+        scoreText.text = "Points: " + score.ToString();
     }
 }
