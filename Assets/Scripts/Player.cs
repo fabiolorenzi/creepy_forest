@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
     private string WALK_ANIMATION = "isWalking";
     private string JUMP_ANIMATION = "isJumping";
+    private string HURT_ANIMATION = "isHurt";
     private string GROUND = "Ground";
 
     private bool isGrounded;
@@ -110,5 +111,23 @@ public class Player : MonoBehaviour
             Score.UpdateScore(score);
             FindObjectOfType<AudioManager>().PlaySound("coinCatch");
         }
+
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            playerHurt();
+        }
+    }
+
+    private void playerHurt()
+    {
+        anim.SetBool(HURT_ANIMATION, true);
+        StartCoroutine(playerHurtAnim());
+    }
+
+    IEnumerator playerHurtAnim()
+    {
+        yield return new WaitForSeconds(2);
+
+        anim.SetBool(HURT_ANIMATION, false);
     }
 }
