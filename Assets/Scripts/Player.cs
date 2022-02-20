@@ -27,8 +27,6 @@ public class Player : MonoBehaviour
 
     public static int score;
 
-    private AudioSource catcher;
-
     private void Awake()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -39,7 +37,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        catcher = GetComponent<AudioSource>();
         Score.UpdateScore(score);
     }
 
@@ -87,12 +84,14 @@ public class Player : MonoBehaviour
             isGrounded = false;
             playerBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             anim.SetBool(JUMP_ANIMATION, true);
+            FindObjectOfType<AudioManager>().PlaySound("jump");
         }
         else if (Input.GetButtonDown("Jump") && !isGrounded && !isDoubleJumped)
         {
             isDoubleJumped = true;
             playerBody.AddForce(new Vector2(0f, jumpForce * 1.3f), ForceMode2D.Impulse);
             anim.SetBool(JUMP_ANIMATION, true);
+            FindObjectOfType<AudioManager>().PlaySound("jump");
         }
     }
 
@@ -108,8 +107,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             score++;
-            catcher.Play();
             Score.UpdateScore(score);
+            FindObjectOfType<AudioManager>().PlaySound("catchCoin");
         }
     }
 }
