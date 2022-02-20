@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         {
             score++;
             Score.UpdateScore(score);
-            FindObjectOfType<AudioManager>().PlaySound("catchCoin");
+            FindObjectOfType<AudioManager>().PlaySound("coinCatch");
         }
     }
 }

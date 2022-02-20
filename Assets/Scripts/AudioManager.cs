@@ -4,6 +4,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    // https://www.youtube.com/watch?v=6OT43pvUyfY
+
     public AudioSounds[] sounds;
 
     void Awake()

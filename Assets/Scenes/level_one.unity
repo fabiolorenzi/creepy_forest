@@ -4782,13 +4782,13 @@ MonoBehaviour:
   sounds:
   - name: coinCatch
     clip: {fileID: 8300000, guid: 4c4f1301d07b58841b327508cf1f0b3f, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
   - name: jump
     clip: {fileID: 8300000, guid: 916a9758b96b5034a9eb7cd19d9eaab5, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
 --- !u!4 &1800081210
 Transform:
