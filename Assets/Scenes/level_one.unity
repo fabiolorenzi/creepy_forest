@@ -1039,7 +1039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518889053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4983,7 +4983,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: jump
     clip: {fileID: 8300000, guid: 916a9758b96b5034a9eb7cd19d9eaab5, type: 3}
-    volume: 0.179
+    volume: 0.136
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_hurt
+    clip: {fileID: 8300000, guid: 996b3465477bb3247ba432fab7f9edc2, type: 3}
+    volume: 0.323
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &1800081210

@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
 
     private void playerHurt()
     {
+        FindObjectOfType<AudioManager>().PlaySound("player_hurt");
         anim.SetBool(HURT_ANIMATION, true);
         StartCoroutine(playerHurtAnim());
     }
