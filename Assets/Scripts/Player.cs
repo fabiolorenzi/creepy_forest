@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATION = "isWalking";
     private string JUMP_ANIMATION = "isJumping";
     private string HURT_ANIMATION = "isHurt";
+    private string DEATH_ANIMATION = "isDead";
     private string GROUND = "Ground";
     private string VOID = "Void";
 
@@ -50,6 +51,11 @@ public class Player : MonoBehaviour
         PlayerMovement();
         AnimatePlayer();
         PlayerJump();
+
+        if (life == 0 && sr.sprite.name == "Dude_Monster_Death_8_10")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void PlayerMovement()
@@ -124,6 +130,12 @@ public class Player : MonoBehaviour
                 life--;
                 Life.UpdateLife(life);
             }
+            else if (!anim.GetBool(HURT_ANIMATION) && life == 1)
+            {
+                playerDeath();
+                life--;
+                Life.UpdateLife(life);
+            }
         }
     }
 
@@ -147,5 +159,10 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         anim.SetBool(HURT_ANIMATION, false);
+    }
+
+    private void playerDeath()
+    {
+        anim.SetBool(DEATH_ANIMATION, true);
     }
 }
