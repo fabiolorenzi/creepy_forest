@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            if (!anim.GetBool(HURT_ANIMATION))
+            if (!anim.GetBool(HURT_ANIMATION) && life > 1)
             {
                 playerHurt();
                 life--;
