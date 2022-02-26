@@ -118,6 +118,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Void"))
+        {
+            FindObjectOfType<AudioManager>().PlaySound("player_fall");
+        }
+    }
+
     private void playerHurt()
     {
         FindObjectOfType<AudioManager>().PlaySound("player_hurt");
