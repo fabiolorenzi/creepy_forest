@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
             }
             else if (!anim.GetBool(HURT_ANIMATION) && life == 1)
             {
+                FindObjectOfType<AudioManager>().PlaySound("player_death");
                 playerDeath();
                 life--;
                 Life.UpdateLife(life);

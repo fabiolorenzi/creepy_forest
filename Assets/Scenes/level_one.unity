@@ -4997,6 +4997,11 @@ MonoBehaviour:
     volume: 0.323
     pitch: 2.37
     source: {fileID: 0}
+  - name: player_death
+    clip: {fileID: 8300000, guid: 5643683cad18a8d42876acfceb35788d, type: 3}
+    volume: 0.19
+    pitch: 1.99
+    source: {fileID: 0}
 --- !u!4 &1800081210
 Transform:
   m_ObjectHideFlags: 0
