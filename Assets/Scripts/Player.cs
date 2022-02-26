@@ -118,9 +118,12 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            playerHurt();
-            life--;
-            Life.UpdateLife(life);
+            if (!anim.GetBool(HURT_ANIMATION))
+            {
+                playerHurt();
+                life--;
+                Life.UpdateLife(life);
+            }
         }
     }
 
