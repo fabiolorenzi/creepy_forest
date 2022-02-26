@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private string JUMP_ANIMATION = "isJumping";
     private string HURT_ANIMATION = "isHurt";
     private string GROUND = "Ground";
+    private string VOID = "Void";
 
     private bool isGrounded;
     private bool isDoubleJumped;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     private float minPos, maxPos;
 
     public static int score;
+    public static int life;
 
     private void Awake()
     {
@@ -34,11 +36,13 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         score = 0;
+        life = 3;
     }
 
     void Start()
     {
         Score.UpdateScore(score);
+        Life.UpdateLife(life);
     }
 
     void Update()
@@ -115,12 +119,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spikes"))
         {
             playerHurt();
+            life--;
+            Life.UpdateLife(life);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Void"))
+        if (collision.CompareTag(VOID))
         {
             FindObjectOfType<AudioManager>().PlaySound("player_fall");
         }
