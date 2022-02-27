@@ -10,8 +10,18 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("level_one");
     }
 
+    public void GoToOptions()
+    {
+        SceneManager.LoadScene("options");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void GoBack()
+    {
+        SceneManager.LoadScene("main_menu");
     }
 }

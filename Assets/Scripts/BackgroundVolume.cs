@@ -5,21 +5,19 @@ using UnityEngine;
 public class BackgroundVolume : MonoBehaviour
 {
     public AudioSource background;
-    public float volumeVal;
 
     private void Awake()
     {
         background = GetComponent<AudioSource>();
-        volumeVal = 0.024f;
     }
 
     private void Start()
     {
-        background.volume = volumeVal;
+        background.volume = OptionBackgroudVolume.backgroundVolume;
     }
 
     private void Update()
     {
-        background.volume = volumeVal;
+        background.volume = OptionBackgroudVolume.backgroundVolume;
     }
 }
