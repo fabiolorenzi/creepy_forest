@@ -16,7 +16,7 @@ public class DeathScript : MonoBehaviour
     {
         if (Player.life == 0)
         {
-            deathText.text = "You are dead";
+            deathText.text = "Game Over";
         }
     }
 }

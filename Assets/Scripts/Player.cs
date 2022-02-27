@@ -145,6 +145,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag(VOID))
         {
             FindObjectOfType<AudioManager>().PlaySound("player_fall");
+            life = 0;
+            Life.UpdateLife(life);
         }
     }
 
