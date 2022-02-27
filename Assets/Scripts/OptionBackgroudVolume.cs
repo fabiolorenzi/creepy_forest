@@ -10,7 +10,7 @@ public class OptionBackgroudVolume : MonoBehaviour
     [Range(0f, 1f)]
     public static float backgroundVolume = 0.024f;
 
-    private Scrollbar scrollbar;
+    private static Scrollbar scrollbar;
 
     public void Awake()
     {
@@ -26,5 +26,11 @@ public class OptionBackgroudVolume : MonoBehaviour
     public void HandleChange()
     {
         backgroundVolume = scrollbar.value;
+    }
+
+    public static void Reset()
+    {
+        backgroundVolume = 0.024f;
+        scrollbar.value = 0.024f;
     }
 }
