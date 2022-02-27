@@ -8,13 +8,13 @@ using UnityEngine.SceneManagement;
 public class OptionBackgroudVolume : MonoBehaviour
 {
     [Range(0f, 1f)]
-    public static float backgroundVolume;
+    public static float backgroundVolume = 0.024f;
 
     private Scrollbar scrollbar;
 
     public void Awake()
     {
-        backgroundVolume = 0.024f;
+        //backgroundVolume = 0.024f;
         scrollbar = GetComponent<Scrollbar>();
     }
 
