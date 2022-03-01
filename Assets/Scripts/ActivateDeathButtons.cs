@@ -7,12 +7,6 @@ public class ActivateDeathButtons : MonoBehaviour
     public GameObject restartButton;
     public GameObject homeButton;
 
-    /*public void Awake()
-    {
-        restartButton = GameObject.Find("RestartButton");
-        homeButton = GameObject.Find("HomeButton");
-    }*/
-
     public void Update()
     {
         if (Player.life == 0)
