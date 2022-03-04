@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float moveForce = 10f;
 
+    public static bool isPlayerBlocked;
+
     [SerializeField]
     private float jumpForce = 10f;
     private float movementX;
@@ -36,8 +38,11 @@ public class Player : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        minPos = -8f;
+        maxPos = 150f;
         score = 0;
         life = 3;
+        isPlayerBlocked = false;
     }
 
     void Start()
@@ -62,9 +67,7 @@ public class Player : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
 
-        minPos = -8f;
-
-        if (transform.position.x > minPos && movementX < 0 || movementX > 0)
+        if (transform.position.x > minPos && movementX < 0 && !isPlayerBlocked || transform.position.x < maxPos && movementX > 0 && !isPlayerBlocked)
         {
             transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
         }

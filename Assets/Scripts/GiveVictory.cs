@@ -35,6 +35,7 @@ public class GiveVictory : MonoBehaviour
             VictoryScript.SetActive(true);
             HomeButton.SetActive(true);
             NextLevelButton.SetActive(true);
+            Player.isPlayerBlocked = true;
         }
     }
 }
