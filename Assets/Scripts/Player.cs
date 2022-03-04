@@ -75,15 +75,22 @@ public class Player : MonoBehaviour
 
     void AnimatePlayer()
     {
-        if (movementX > 0)
+        if (!isPlayerBlocked)
         {
-            anim.SetBool(WALK_ANIMATION, true);
-            sr.flipX = false;
-        }
-        else if (movementX < 0)
-        {
-            anim.SetBool(WALK_ANIMATION, true);
-            sr.flipX = true;
+            if (movementX > 0)
+            {
+                anim.SetBool(WALK_ANIMATION, true);
+                sr.flipX = false;
+            }
+            else if (movementX < 0)
+            {
+                anim.SetBool(WALK_ANIMATION, true);
+                sr.flipX = true;
+            }
+            else
+            {
+                anim.SetBool(WALK_ANIMATION, false);
+            }
         }
         else
         {
@@ -93,19 +100,25 @@ public class Player : MonoBehaviour
 
     void PlayerJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isGrounded = false;
-            playerBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            anim.SetBool(JUMP_ANIMATION, true);
-            FindObjectOfType<AudioManager>().PlaySound("jump");
+        if (!isPlayerBlocked) { 
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                isGrounded = false;
+                playerBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                anim.SetBool(JUMP_ANIMATION, true);
+                FindObjectOfType<AudioManager>().PlaySound("jump");
+            }
+            else if (Input.GetButtonDown("Jump") && !isGrounded && !isDoubleJumped)
+            {
+                isDoubleJumped = true;
+                playerBody.AddForce(new Vector2(0f, jumpForce * 1.3f), ForceMode2D.Impulse);
+                anim.SetBool(JUMP_ANIMATION, true);
+                FindObjectOfType<AudioManager>().PlaySound("jump");
+            }
         }
-        else if (Input.GetButtonDown("Jump") && !isGrounded && !isDoubleJumped)
+        else
         {
-            isDoubleJumped = true;
-            playerBody.AddForce(new Vector2(0f, jumpForce * 1.3f), ForceMode2D.Impulse);
-            anim.SetBool(JUMP_ANIMATION, true);
-            FindObjectOfType<AudioManager>().PlaySound("jump");
+            anim.SetBool(JUMP_ANIMATION, false);
         }
     }
 
