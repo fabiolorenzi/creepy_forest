@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GiveVictory : MonoBehaviour
 {
+    public GameObject VictoryScript;
     public GameObject HomeButton;
     public GameObject NextLevelButton;
 
@@ -31,6 +32,7 @@ public class GiveVictory : MonoBehaviour
     {
         if (Player.score == levelsPoints)
         {
+            VictoryScript.SetActive(true);
             HomeButton.SetActive(true);
             NextLevelButton.SetActive(true);
         }
