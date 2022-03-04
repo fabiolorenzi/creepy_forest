@@ -420,6 +420,8 @@ GameObject:
   - component: {fileID: 344165955}
   - component: {fileID: 344165954}
   - component: {fileID: 344165958}
+  - component: {fileID: 344165960}
+  - component: {fileID: 344165959}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -529,6 +531,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartButton: {fileID: 1670883091}
   homeButton: {fileID: 168203836}
+--- !u!114 &344165959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344165953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66902f53ee7f52409a5701033a16f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &344165960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344165953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf80d252c88a0db4bb12aa7b315be2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416053504
 GameObject:
   m_ObjectHideFlags: 0
