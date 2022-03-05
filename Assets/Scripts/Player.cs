@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         minPos = -8f;
-        maxPos = 150f;
+        maxPos = 300f;
         score = 0;
-        life = 3;
+        life = 10;
         isPlayerBlocked = false;
     }
 
