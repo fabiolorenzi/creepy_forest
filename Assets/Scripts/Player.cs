@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private float moveForce = 10f;
 
     public static bool isPlayerBlocked;
+    public static bool isTimeOver;
 
     [SerializeField]
     private float jumpForce = 10f;
@@ -41,8 +42,9 @@ public class Player : MonoBehaviour
         minPos = -8f;
         maxPos = 300f;
         score = 0;
-        life = 10;
+        life = 3;
         isPlayerBlocked = false;
+        isTimeOver = false;
     }
 
     void Start()
@@ -60,6 +62,12 @@ public class Player : MonoBehaviour
         if (life == 0 && sr.sprite.name == "Dude_Monster_Death_8_10")
         {
             Destroy(gameObject);
+        }
+        
+        if (isTimeOver)
+        {
+            playerDeath();
+            life = 0;
         }
     }
 
@@ -136,6 +144,7 @@ public class Player : MonoBehaviour
             score++;
             Score.UpdateScore(score);
             FindObjectOfType<AudioManager>().PlaySound("coinCatch");
+            Timer.timeRemaining += 2f;
         }
 
         if (collision.gameObject.CompareTag("Spikes"))
