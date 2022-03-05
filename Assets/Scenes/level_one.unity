@@ -3142,7 +3142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cd3745b5f66604aa8064caad81eb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
 --- !u!114 &523119612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13283,12 +13282,12 @@ MonoBehaviour:
   sounds:
   - name: coinCatch
     clip: {fileID: 8300000, guid: 4c4f1301d07b58841b327508cf1f0b3f, type: 3}
-    volume: 1
+    volume: 0.241
     pitch: 1
     source: {fileID: 0}
   - name: jump
     clip: {fileID: 8300000, guid: 916a9758b96b5034a9eb7cd19d9eaab5, type: 3}
-    volume: 0.136
+    volume: 0.078
     pitch: 1
     source: {fileID: 0}
   - name: player_hurt
@@ -13298,8 +13297,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: player_fall
     clip: {fileID: 8300000, guid: c610a2e92d7622641aca123e588e6faf, type: 3}
-    volume: 0.323
-    pitch: 2.37
+    volume: 0.035
+    pitch: 3
     source: {fileID: 0}
   - name: player_death
     clip: {fileID: 8300000, guid: 5643683cad18a8d42876acfceb35788d, type: 3}
