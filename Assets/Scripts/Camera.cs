@@ -26,18 +26,21 @@ public class Camera : MonoBehaviour
         tempPos.x = player.position.x;
 
         minX = 2.5f;
-        maxX = 100f;
+        maxX = 500f;
 
         if (tempPos.x < minX)
         {
             tempPos.x = minX;
         }
-        
+
         if (tempPos.x > maxX)
         {
             tempPos.x = maxX;
         }
 
-        transform.position = tempPos;
+        if (!Player.isPlayerBlocked)
+        {
+            transform.position = tempPos;
+        }
     }
 }

@@ -163,6 +163,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<AudioManager>().PlaySound("player_fall");
             life = 0;
             Life.UpdateLife(life);
+            isPlayerBlocked = true;
         }
     }
 
@@ -183,5 +184,6 @@ public class Player : MonoBehaviour
     private void playerDeath()
     {
         anim.SetBool(DEATH_ANIMATION, true);
+        isPlayerBlocked = true;
     }
 }

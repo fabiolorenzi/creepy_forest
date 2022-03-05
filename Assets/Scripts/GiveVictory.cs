@@ -12,11 +12,11 @@ public class GiveVictory : MonoBehaviour
     private bool isPlayed;
 
     private static LevelsReq[] levels = {
-        new LevelsReq("level_one", 10)
+        new LevelsReq("level_one", 25)
     };
 
     private string currentLevel;
-    private int levelsPoints;
+    public static int levelsPoints;
 
     public void Awake()
     {

@@ -15,6 +15,6 @@ public class Score : MonoBehaviour
 
     public static void UpdateScore(int score)
     {
-        scoreText.text = "Points: " + score.ToString();
+        scoreText.text = "Points: " + score.ToString() + "/" + GiveVictory.levelsPoints;
     }
 }
