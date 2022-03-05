@@ -25,11 +25,18 @@ public class Timer : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             timer.text = timeRemaining.ToString("##.##");
         }
+        else if (Player.isPlayerDeath)
+        {
+            timeRemaining = 0f;
+            timer.text = "0.00";
+            Player.isTimeOver = false;
+        }
         else
         {
             timeRemaining = 0f;
             timer.text = "0.00";
             Player.isTimeOver = true;
+            DeathScript.deathByTime = true;
         }
     }
 }

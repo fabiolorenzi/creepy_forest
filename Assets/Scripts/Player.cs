@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     public static bool isPlayerBlocked;
     public static bool isTimeOver;
+    public static bool isPlayerDeath;
 
     [SerializeField]
     private float jumpForce = 10f;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
         life = 3;
         isPlayerBlocked = false;
         isTimeOver = false;
+        isPlayerDeath = false;
     }
 
     void Start()
@@ -144,7 +146,7 @@ public class Player : MonoBehaviour
             score++;
             Score.UpdateScore(score);
             FindObjectOfType<AudioManager>().PlaySound("coinCatch");
-            Timer.timeRemaining += 2f;
+            Timer.timeRemaining += 5f;
         }
 
         if (collision.gameObject.CompareTag("Spikes"))
@@ -173,6 +175,7 @@ public class Player : MonoBehaviour
             life = 0;
             Life.UpdateLife(life);
             isPlayerBlocked = true;
+            isPlayerDeath = true;
         }
     }
 
@@ -194,5 +197,6 @@ public class Player : MonoBehaviour
     {
         anim.SetBool(DEATH_ANIMATION, true);
         isPlayerBlocked = true;
+        isPlayerDeath = true;
     }
 }
