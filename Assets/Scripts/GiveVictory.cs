@@ -9,7 +9,7 @@ public class GiveVictory : MonoBehaviour
     public GameObject HomeButton;
     public GameObject NextLevelButton;
 
-    private bool isPlayed;
+    public static bool isPlayed;
 
     private static LevelsReq[] levels = {
         new LevelsReq("level_one", 30)

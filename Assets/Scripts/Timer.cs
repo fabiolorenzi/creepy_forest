@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
 
     public void Update()
     {
-        if (timeRemaining > 0f && Player.life > 0)
+        if (timeRemaining > 0f && Player.life > 0 && !GiveVictory.isPlayed)
         {
             timeRemaining -= Time.deltaTime;
             timer.text = timeRemaining.ToString("##.##");
@@ -30,6 +30,10 @@ public class Timer : MonoBehaviour
             timeRemaining = 0f;
             timer.text = "0.00";
             Player.isTimeOver = false;
+        }
+        else if (GiveVictory.isPlayed)
+        {
+            timer.text = timeRemaining.ToString("##.##");
         }
         else
         {

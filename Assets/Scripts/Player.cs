@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
             score++;
             Score.UpdateScore(score);
             FindObjectOfType<AudioManager>().PlaySound("coinCatch");
-            Timer.timeRemaining += 5f;
+            Timer.timeRemaining += 3f;
         }
 
         if (collision.gameObject.CompareTag("Spikes"))
