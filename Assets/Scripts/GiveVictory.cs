@@ -9,6 +9,8 @@ public class GiveVictory : MonoBehaviour
     public GameObject HomeButton;
     public GameObject NextLevelButton;
 
+    private bool isPlayed;
+
     private static LevelsReq[] levels = {
         new LevelsReq("level_one", 3)
     };
@@ -18,6 +20,8 @@ public class GiveVictory : MonoBehaviour
 
     public void Awake()
     {
+        isPlayed = false;
+
         currentLevel = SceneManager.GetActiveScene().name;
         for (int x = 0; x < levels.Length; x++)
         {
@@ -30,12 +34,14 @@ public class GiveVictory : MonoBehaviour
 
     public void Update()
     {
-        if (Player.score == levelsPoints)
+        if (Player.score == levelsPoints && !isPlayed)
         {
             VictoryScript.SetActive(true);
             HomeButton.SetActive(true);
             NextLevelButton.SetActive(true);
             Player.isPlayerBlocked = true;
+            FindObjectOfType<AudioManager>().PlaySound("victory_sound");
+            isPlayed = true;
         }
     }
 }

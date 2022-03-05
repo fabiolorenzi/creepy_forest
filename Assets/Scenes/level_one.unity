@@ -4793,6 +4793,11 @@ MonoBehaviour:
     volume: 0.19
     pitch: 1.99
     source: {fileID: 0}
+  - name: victory_sound
+    clip: {fileID: 8300000, guid: 27cb9deaf8e1a934493ae580dc3e1381, type: 3}
+    volume: 0.19
+    pitch: 1.45
+    source: {fileID: 0}
 --- !u!4 &1800081210
 Transform:
   m_ObjectHideFlags: 0
