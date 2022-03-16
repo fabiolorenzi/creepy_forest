@@ -19,7 +19,7 @@ public class VictoryButtons : MonoBehaviour
 
     public void NextLevel()
     {
-        if (sceneIndex != 2)
+        if (sceneIndex != 3)
         {
             SceneManager.LoadScene(sceneIndex + 1);
         }
