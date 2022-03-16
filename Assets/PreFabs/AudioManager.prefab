@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5066614125280778688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5066614125280778690}
+  - component: {fileID: 5066614125280778689}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5066614125280778690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066614125280778688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.757304, y: -2.762249, z: 1.3953356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5066614125280778689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066614125280778688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6531c077c32bfc40942e3b717a48182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: coinCatch
+    clip: {fileID: 8300000, guid: 4c4f1301d07b58841b327508cf1f0b3f, type: 3}
+    volume: 0.241
+    pitch: 1
+    source: {fileID: 0}
+  - name: jump
+    clip: {fileID: 8300000, guid: 916a9758b96b5034a9eb7cd19d9eaab5, type: 3}
+    volume: 0.078
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_hurt
+    clip: {fileID: 8300000, guid: 996b3465477bb3247ba432fab7f9edc2, type: 3}
+    volume: 0.323
+    pitch: 1.48
+    source: {fileID: 0}
+  - name: player_fall
+    clip: {fileID: 8300000, guid: c610a2e92d7622641aca123e588e6faf, type: 3}
+    volume: 0.035
+    pitch: 3
+    source: {fileID: 0}
+  - name: player_death
+    clip: {fileID: 8300000, guid: 5643683cad18a8d42876acfceb35788d, type: 3}
+    volume: 0.19
+    pitch: 1.99
+    source: {fileID: 0}
+  - name: victory_sound
+    clip: {fileID: 8300000, guid: 27cb9deaf8e1a934493ae580dc3e1381, type: 3}
+    volume: 0.19
+    pitch: 1.45
+    source: {fileID: 0}
