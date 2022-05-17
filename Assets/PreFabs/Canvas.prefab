@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -405,6 +405,14 @@ PrefabInstance:
     - target: {fileID: 5329308867729354656, guid: 82ab44aef68e94e49b3f16800d60c837, type: 3}
       propertyPath: m_Name
       value: Life
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329308867729354658, guid: 82ab44aef68e94e49b3f16800d60c837, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329308867729354658, guid: 82ab44aef68e94e49b3f16800d60c837, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5329308867729354659, guid: 82ab44aef68e94e49b3f16800d60c837, type: 3}
       propertyPath: m_Pivot.x
@@ -1034,6 +1042,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5961961601946601988}
     m_Modifications:
+    - target: {fileID: 3249748662908840474, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249748662908840474, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 3249748662908840484, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
       propertyPath: m_Name
       value: Points
@@ -1104,11 +1120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249748662908840485, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 243.4
+      value: 243.40002
       objectReference: {fileID: 0}
     - target: {fileID: 3249748662908840485, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -74.8
+      value: -74.79999
       objectReference: {fileID: 0}
     - target: {fileID: 3249748662908840485, guid: 12ced0e1d8b8f7a40bbce9d5111cf327, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

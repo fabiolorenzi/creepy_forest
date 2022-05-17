@@ -10890,6 +10890,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5961961601856073661, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961601856073661, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 5961961601946601984, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -10986,6 +10994,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1361968505}
+    - target: {fileID: 5961961602111483486, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 243.40002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961602111483486, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -74.79999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961602111483489, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961602111483489, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961602532489622, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961961602532489622, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41be4e7e11ee9a74a92e458ae0f8b3a9, type: 3}
 --- !u!1001 &6654904081198961947
